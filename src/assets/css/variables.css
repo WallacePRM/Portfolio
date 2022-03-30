@@ -1,0 +1,29 @@
+:root {
+    --main-color: 255, 255, 255;
+    --primary-color: 34, 34, 34;
+    --secondary-color: 236, 240, 244;
+    --background-float-color: 0, 0, 0;
+    --main-color-inverted: 34, 34, 34;
+    --text-color-inverted: 235, 235, 235;
+
+    --title-color: 34, 34, 34;
+    --text-color: 94, 94, 104;
+    --text-color-light: 124, 124, 134;
+    --button-color: 34, 34, 34;
+    --border: 1px solid rgb(var(--border-color));
+    --border-color: 210, 210, 220;
+    --field-shadow: 0 1px 1px rgba(24, 42, 80, 0.068);
+    --box-shadow: 0 3px 10px rgba(0, 0, 0, .15);
+
+    --accent-color: var(--blue-color);
+    --blue-color: 0, 100, 255;
+    --purple-color: 59, 74, 158;
+    --yellow-color: 244, 170, 32;
+    --green-color: 90, 172, 90;
+    --red-color: 255, 0, 0;
+    --orange-color: 228, 106, 68;
+    --pink-color: 255, 0, 255;
+    --blue-marine-color: 78, 223, 228;
+
+    --light-blue-color: 100, 181, 246;
+}

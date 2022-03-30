@@ -1,0 +1,17 @@
+.theme--dark {
+    --main-color: 24, 24, 24;
+    --main-color-inverted: 255, 255, 255;
+    --secondary-color: 34, 34, 34;
+
+    --title-color: 255, 255, 255;
+    --text-color: 169, 170, 175;
+    --text-color-inverted: 34, 34, 34;
+    --text-color-light: 129, 130, 140;
+    --border-color: 74, 74, 84;
+    --border: 1px solid rgb(var(--border-color));
+    --button-color: 255, 255, 255;
+}
+
+.theme--dark .c-app {
+    background: rgba(var(--secondary-color), .97);
+}
