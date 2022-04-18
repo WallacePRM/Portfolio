@@ -59,7 +59,7 @@ const init = () => {
                         <div class="c-container__info">
                             <div class="c-container__item">
                                 <h3 class="c-container__item__title">Quem sou eu?</h3>
-                                <p>Meu nome completo é Wallace Pires Rodrigues Miranda, nasci em Governador Valadares, uma cidade no interior de Minas Gerais.</p>
+                                <p>Me chamo Wallace Pires, sou de Governador Valadares / Minas Gerais.</p>
                             </div>
                             <div class="c-container__item">
                                 <h3 class="c-container__item__title">Qual o meu nível de conhecimento?</h3>
