@@ -112,7 +112,7 @@ const init = () => {
                         <div class="mt-20 mb-20 c--separator"></div>
                     </div>
                     <div class="c-container__content">
-                        <img class="c-container__img" src="assets/img/platelet.svg"/>
+                        <img class="c-container__img" src="assets/svg/platelet.svg"/>
                         <div class="flex  c-container__info p">
                             <form class="c-form">
                                 <h3 class="text-medium">Entrar em contato</h3>
@@ -182,10 +182,11 @@ const setScrollTopVisibility = () => {
 
 const switchTheme = () => {
 
-    if ($('body').is('.theme--dark')) {
+    const isDark = $('body').is('.theme--dark');
+    if (isDark) {
 
         $('body').removeClass('theme--dark');
-        localStorage.setItem('theme', 'auto');
+        localStorage.setItem('theme', 'light');
     }
     else {
 
@@ -194,12 +195,13 @@ const switchTheme = () => {
     }
 
     createGithubGraphics();
+    updateCarouselIitemImage();
 };
 
 const applyTheme = () => {
 
     const theme = getTheme();
-    if (theme && theme.indexOf('dark') !== -1 || false) {
+    if (theme === 'dark') {
         $('body').addClass('theme--dark');
         $('.c-theme').addClass('c-theme--active');
     }
@@ -232,7 +234,7 @@ const handleScrollTop = () => {
 const handleFocusEffect = (e) => {
 
     const $input = $(e.currentTarget);
-    focusInputEffect($input)
+    focusInputEffect($input);
 };
 
 const handleToggleSwitch = () => {

@@ -445,4 +445,10 @@ body::after {
         border-left: 2px solid rgb(var(--border-color), .5);
         border-top: 2px solid rgb(var(--border-color), .5);
     }
+
+    .c-container__img {
+        position: absolute;
+        height: 100%;
+        opacity: .7;
+    }
 }
