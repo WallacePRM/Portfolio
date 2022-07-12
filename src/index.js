@@ -40,12 +40,12 @@ const init = () => {
                                 <i class="fa-regular fa-envelope mr-10"></i>
                                 <span>Contacte-me</span>
                             </a>
-                            <!--
+
                             <a class="btn btn--primary ripple-effect glare-effect m-5">
                                 <i class="fa-solid fa-cloud-arrow-down mr-10"></i>
                                 <span>Baixar resumo</span>
                             </a>
-                            -->
+
                         </div>
                     </div>
                 </div>
@@ -145,7 +145,6 @@ const init = () => {
                 </div>
             </section>
         </main>
-        <footer style="height: 400px; width: 100%; background: rgb(var(--primary-color))"></footer>
     `);
 
     createNav();

@@ -1,6 +1,10 @@
 const createCarousel = () => {
 
-    const theme = getTheme();
+    let theme = getTheme();
+    if (theme === 'auto') {
+        theme = 'light';
+    }
+
     const listItems = [`<div class="c-carousel__item">
             <img class="c-carousel__item__img" src="assets/img/midesp_${theme}.png">
             <div class="c-carousel__item__info">
