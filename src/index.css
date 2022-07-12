@@ -214,7 +214,7 @@ body::after {
     width: 100%;
 }
 
-.c-section--presentation {
+.c-section--introduction {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -223,7 +223,7 @@ body::after {
     width: 100%;
 }
 
-.c-content__presentation-info {
+.c-content__introduction-info {
     font-size: 1.5em;
 }
 
@@ -300,7 +300,7 @@ body::after {
 
 .c-container__item {
     margin-bottom: 1,5rem;
-    color: rgb(var(--text-color-light));
+    color: rgb(var(--text-color--light));
 }
 .c-container__item__title {
     color: rgb(var(--title-color));
@@ -342,7 +342,7 @@ body::after {
     margin-right: 10px;
     border-radius: .3rem;
     background: rgb(var(--secondary-color));
-    color: rgb(var(--text-color-light));
+    color: rgb(var(--text-color--light));
     padding: 10px;
 }
 

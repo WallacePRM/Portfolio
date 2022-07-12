@@ -3,12 +3,13 @@
     --primary-color: 29, 33, 37;
     --secondary-color: 236, 240, 244;
     --background-float-color: 0, 0, 0;
-    --main-color-inverted: 29, 33, 37;
-    --text-color-inverted: 235, 235, 235;
+
+    --main-color--inverted: 29, 33, 37;
+    --text-color--inverted: 235, 235, 235;
 
     --title-color: 34, 34, 34;
     --text-color: 94, 94, 104;
-    --text-color-light: 124, 124, 134;
+    --text-color--light: 124, 124, 134;
     --button-color: 34, 34, 34;
     --border: 1px solid rgb(var(--border-color));
     --border-color: 210, 210, 220;
@@ -26,4 +27,8 @@
     --blue-marine-color: 78, 223, 228;
 
     --light-blue-color: 100, 181, 246;
+
+    --toastnotify-success: rgb(59, 122, 59);
+    --toastnotify-danger: rgb(168, 54, 54);
+    --toastnotify-warning: rgb(187, 180, 83);
 }

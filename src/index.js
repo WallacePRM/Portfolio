@@ -23,10 +23,10 @@ const init = () => {
             </div>
         </header>
         <main class="c-content">
-            <section class="c-section c-section--presentation">
+            <section class="c-section c-section--introduction">
                 <div class="c-container">
                     <img class="c-content__profile-img" src="assets/img/img.png" alt="Wallace PRM">
-                    <div class="c-content__presentation-info">
+                    <div class="c-content__introduction-info">
                         <div class="c-connections">
                             <a class="c-connections__item" target="_blank" href="https://github.com/WallacePRM" rel="nofollow, noreferrer, noopener, external">
                                 <i class="fa-brands fa-github" title="Página no Github"></i>
@@ -155,7 +155,6 @@ const init = () => {
 const binds = () => {
 
     $('.c-app').on('scroll', setScrollTopVisibility);
-
     $('[name="btn_sidebar"]').on('click', handleOpenSidebar);
 
     $('.c-form .item-focus-effect').on('focusin', handleFocusEffect);
@@ -271,10 +270,13 @@ const handleSendEmail = async (e) => {
         };
 
         await sendEmail(config);
+        toastSuccess('E-mail enviado!');
     }
     catch(error) {
 
         console.error(error);
+
+        toastError('Ops! Houve um imprevisto');
     }
     finally {
         $(form).find(':input').attr('disabled', null);

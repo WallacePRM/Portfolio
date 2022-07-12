@@ -17,5 +17,4 @@ const getScrollPosition = () => {
 const saveScrollPosition = (position) => {
 
     localStorage.setItem('last-scroll-position', position);
-    console.log('oi')
 };
