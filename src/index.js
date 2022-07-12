@@ -9,6 +9,8 @@ jQuery(() => {
     rippleEffect($('.c-app'));
     setGlareEffect();
     if ($(window).width() > 768) setVanillaEffect();
+
+    setScrollPosition();
 });
 
 const init = () => {
@@ -171,13 +173,12 @@ const onResize = () => {
 
 const setScrollTopVisibility = () => {
 
-    let lastScrollTop = parseInt(localStorage.getItem('last-scroll-position')) || 0;
-    const st = $('.c-app').scrollTop();
+    const scrollPosition = $('.c-app').scrollTop();
 
-    if (st > lastScrollTop) $('.c-scroll-top').addClass('c-scroll-top--visible');
+    if (scrollPosition > 0) $('.c-scroll-top').addClass('c-scroll-top--visible');
     else $('.c-scroll-top').removeClass('c-scroll-top--visible');
 
-    localStorage.setItem('last-scroll-position', st);
+    delay(() => saveScrollPosition(scrollPosition), 100);
 };
 
 const switchTheme = () => {
@@ -215,6 +216,12 @@ const createGithubGraphics = () => {
         <img class="card-template c-github__graphics__item" height="180em" src="https://github-readme-stats.vercel.app/api?username=WallacePRM&show_icons=true&theme=${theme === 'dark' ? 'git_dark' : 'light'}&include_all_commits=true&count_private=true&hide_border=true&locale=pt-br&bg_color=ffffff00&text_color=${theme === 'dark' ? 'A9AAAF' : '222'}"/>
         <img class="card-template c-github__graphics__item" height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=WallacePRM&layout=compact&langs_count=7&theme=${theme === 'dark' ? 'git_dark' : 'light'}&hide_border=true&locale=pt-br&bg_color=ffffff00&text_color=${theme === 'dark' ? 'A9AAAF' : '222'}"/>
     `);
+};
+
+const setScrollPosition = () => {
+
+    const scrollPosition = getScrollPosition();
+    $('.c-app').scrollTop(scrollPosition);
 };
 
 /* ========= HANDLES ========= */
