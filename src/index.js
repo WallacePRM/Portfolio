@@ -9,7 +9,6 @@ jQuery(() => {
     rippleEffect($('.c-app'));
     setGlareEffect();
     if ($(window).width() > 768) setVanillaEffect();
-
     setScrollPosition();
 });
 
@@ -185,18 +184,24 @@ const setScrollTopVisibility = () => {
     delay(() => saveScrollPosition(scrollPosition), 100);
 };
 
+const setScrollPosition = () => {
+
+    const scrollPosition = getScrollPosition();
+    $('.c-app').scrollTop(scrollPosition);
+};
+
 const switchTheme = () => {
 
     const isDark = $('body').is('.theme--dark');
     if (isDark) {
 
         $('body').removeClass('theme--dark');
-        localStorage.setItem('theme', 'light');
+        saveTheme('light');
     }
     else {
 
         $('body').addClass('theme--dark');
-        localStorage.setItem('theme', 'dark');
+        saveTheme('dark');
     }
 
     createGithubGraphics();
@@ -220,12 +225,6 @@ const createGithubGraphics = () => {
         <img class="card-template c-github__graphics__item" height="180em" src="https://github-readme-stats.vercel.app/api?username=WallacePRM&show_icons=true&theme=${theme === 'dark' ? 'git_dark' : 'light'}&include_all_commits=true&count_private=true&hide_border=true&locale=pt-br&bg_color=ffffff00&text_color=${theme === 'dark' ? 'A9AAAF' : '222'}"/>
         <img class="card-template c-github__graphics__item" height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=WallacePRM&layout=compact&langs_count=7&theme=${theme === 'dark' ? 'git_dark' : 'light'}&hide_border=true&locale=pt-br&bg_color=ffffff00&text_color=${theme === 'dark' ? 'A9AAAF' : '222'}"/>
     `);
-};
-
-const setScrollPosition = () => {
-
-    const scrollPosition = getScrollPosition();
-    $('.c-app').scrollTop(scrollPosition);
 };
 
 /* ========= HANDLES ========= */

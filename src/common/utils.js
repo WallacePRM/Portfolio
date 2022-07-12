@@ -1,7 +1,3 @@
-const getTheme = () => {
-
-    return localStorage.getItem('theme');
-};
 
 const componentToHex = (c) => {
     var hex = c.toString(16);
@@ -16,18 +12,6 @@ const convertRgbToHex = (color) => {
 
     let c = color.split(',', 3);
     return rgbToHex(parseInt(c[0]), parseInt(c[1]), parseInt(c[2]));
-};
-
-const getScrollPosition = () => {
-
-    const scrollPosition = localStorage.getItem('last-scroll-position') || 0;
-    return scrollPosition;
-};
-
-const saveScrollPosition = (position) => {
-
-    localStorage.setItem('last-scroll-position', position);
-    console.log('oi')
 };
 
 const delay = (() => {
