@@ -5,7 +5,18 @@ const createCarousel = () => {
         theme = 'light';
     }
 
-    const listItems = [`<div class="c-carousel__item">
+    const listItems = [
+        `<div class="c-carousel__item">
+            <img class="c-carousel__item__img" src="assets/img/reprodutor_multimidia_${theme}.png">
+            <div class="c-carousel__item__info">
+                <div class="c-carousel__item__info__effect">
+                    <h3 class="c-carousel__item__title">Reprodutor Multimídia</h3>
+                    <p class="c-carousel__item__description">Projeto grande em desenvolvimento para uso próprio, onde o objetivo era estudar e aprender sobre reproduções de mídias no navegador.  </br> (Inspirado no Reprodutor Multimídia da Microsoft)</p>
+                    <a target="__blank" href="https://reprodutor-multimidia-app.herokuapp.com/home" class="c-carousel__item__actions btn btn--secundary glare-effect" rel="nofollow, noreferrer, noopener, external">Saiba mais</a>
+                </div>
+            </div>
+        </div>`,
+        `<div class="c-carousel__item">
             <img class="c-carousel__item__img" src="assets/img/midesp_${theme}.png">
             <div class="c-carousel__item__info">
                 <div class="c-carousel__item__info__effect">
@@ -22,16 +33,6 @@ const createCarousel = () => {
                     <h3 class="c-carousel__item__title">To Do</h3>
                     <p class="c-carousel__item__description">Projeto básico desenvolvido para uso próprio, onde objetivo era criar um sistema de To do simples com as funções básicas como: adicionar, editar e remover. </br> (Inspirado no To Do da Microsoft)</p>
                     <a target="__blank" href="https://wallaceprm.github.io/ToDo-App/" class="c-carousel__item__actions btn btn--secundary glare-effect" rel="nofollow, noreferrer, noopener, external">Saiba mais</a>
-                </div>
-            </div>
-        </div>`,
-        `<div class="c-carousel__item">
-            <img class="c-carousel__item__img" src="assets/img/reprodutor_multimidia_${theme}.png">
-            <div class="c-carousel__item__info">
-                <div class="c-carousel__item__info__effect">
-                    <h3 class="c-carousel__item__title">Reprodutor Multimídia</h3>
-                    <p class="c-carousel__item__description">Projeto grande em desenvolvimento para uso próprio, onde o objetivo era estudar e aprender sobre reproduções de mídias no navegador.  </br> (Inspirado no Reprodutor Multimídia da Microsoft)</p>
-                    <a target="__blank" href="https://reprodutor-multimidia-app.herokuapp.com/home" class="c-carousel__item__actions btn btn--secundary glare-effect" rel="nofollow, noreferrer, noopener, external">Saiba mais</a>
                 </div>
             </div>
         </div>`,

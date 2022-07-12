@@ -40,12 +40,12 @@ const init = () => {
                                 <i class="fa-regular fa-envelope mr-10"></i>
                                 <span>Contacte-me</span>
                             </a>
-
+                            <!--
                             <a class="btn btn--primary ripple-effect glare-effect m-5">
                                 <i class="fa-solid fa-cloud-arrow-down mr-10"></i>
                                 <span>Baixar resumo</span>
                             </a>
-
+                            -->
                         </div>
                     </div>
                 </div>
@@ -67,7 +67,7 @@ const init = () => {
                                 <h3 class="c-container__item__title">Qual o meu nível de conhecimento?</h3>
                                 <ul>
                                     <li><div class="b-green"></div>Conhecimento avançado em HTML, CSS, JAVASCRIPT e TYPESCRIPT.</li>
-                                    <li><div class="b-red"></div>Conhecimento básico em frameworks. (REACT).</li>
+                                    <li><div class="b-yellow"></div>Conhecimento intermediário em frameworks. (REACT).</li>
                                     <li><div class="b-yellow"></div>Conhecimento intermediário em banco de dados. (POSTGRESQL)</li>
                                     <li><div class="b-red"></div>Conhecimento básico em Webpack.</li>
                                     <li><div class="b-red"></div>Conhecimento básico em NodeJS.</li>
@@ -173,9 +173,14 @@ const onResize = () => {
 const setScrollTopVisibility = () => {
 
     const scrollPosition = $('.c-app').scrollTop();
+    const lastScrollPosition = getScrollPosition();
 
-    if (scrollPosition > 0) $('.c-scroll-top').addClass('c-scroll-top--visible');
-    else $('.c-scroll-top').removeClass('c-scroll-top--visible');
+    if (scrollPosition > 100 && scrollPosition < lastScrollPosition) {
+        $('.c-scroll-top').addClass('c-scroll-top--visible');
+    }
+    else {
+        $('.c-scroll-top').removeClass('c-scroll-top--visible');
+    }
 
     delay(() => saveScrollPosition(scrollPosition), 100);
 };
