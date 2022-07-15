@@ -17,7 +17,11 @@ const init = () => {
     $('.c-app').append(`
         <header class="c-header">
             <div class="c-header__info">
-                <h1 class="c-header__title">Port<span class="highlight--text ml-10">fólio~</span></h1>
+                <h1 class="c-header__title">
+                    Port<span class="highlight--text ml-10">fólio~</span>
+                    <div class="c-clouds-group"></div>
+                </h1>
+
                 <i name="btn_sidebar" class="c-sidebar-btn glare-effect fa-solid fa-bars"></i>
                 <!-- Nav -->
             </div>
@@ -100,7 +104,9 @@ const init = () => {
                                 </div>
                                 <div class="c-github__graphics"></div>
                             </div>
-                            <div class="c-carousel"></div>
+                            <div class="c-carousel">
+                                <div class="c-clouds-group"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -149,6 +155,7 @@ const init = () => {
     createNav();
     createGithubGraphics();
     createCarousel();
+    createCloudsGroup();
     applyTheme();
 };
 
@@ -224,6 +231,17 @@ const createGithubGraphics = () => {
         <img class="card-template c-github__graphics__item" height="180em" src="https://github-readme-stats.vercel.app/api?username=WallacePRM&show_icons=true&theme=${theme === 'dark' ? 'git_dark' : 'light'}&include_all_commits=true&count_private=true&hide_border=true&locale=pt-br&bg_color=ffffff00&text_color=${theme === 'dark' ? 'A9AAAF' : '222'}"/>
         <img class="card-template c-github__graphics__item" height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=WallacePRM&layout=compact&langs_count=7&theme=${theme === 'dark' ? 'git_dark' : 'light'}&hide_border=true&locale=pt-br&bg_color=ffffff00&text_color=${theme === 'dark' ? 'A9AAAF' : '222'}"/>
     `);
+};
+
+const createCloudsGroup = () => {
+
+    for (let i = 1; i < 4; i++) {
+        $('.c-clouds-group').append(`
+            <svg class="c-clouds-group__item c-clouds-group__item--${i}" width="128" height="77" viewBox="0 0 128 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M103 25C103 25.6733 102.973 26.3403 102.921 27.0001L103 27C116.807 27 128 38.1929 128 52C128 65.8071 116.807 77 103 77C102.327 77 101.66 76.9734 101 76.9212V77H20C8.9543 77 0 68.0457 0 57C0 45.9543 8.9543 37 20 37C22.0981 37 24.1207 37.3231 26.0209 37.9222C26.007 37.6165 26 37.3091 26 37C26 25.9543 34.9543 17 46 17C48.7785 17 51.4246 17.5666 53.8292 18.5905C56.6596 7.88886 66.4085 0 78 0C91.8071 0 103 11.1929 103 25Z" fill="white"/>
+            </svg>
+        `);
+    }
 };
 
 /* ========= HANDLES ========= */

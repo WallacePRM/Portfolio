@@ -10,7 +10,7 @@ const sendEmail = async (emailConfig) => {
             from: 'wprm.postfolio@gmail.com',
             to: 'wprm4work@hotmail.com',
             subject: `Portfólio: ${emailConfig.subject}`,
-            content: `<p>${emailConfig.name} (${emailConfig.email}), ${emailConfig.message}</p>`
+            content: `<p>Olá, venho através do seu portfólio, meu nome é ${emailConfig.name} e este é meu e-mail (${emailConfig.email}). Pois bem, segue minha mensagem: ${emailConfig.message}</p>`
         })
     });
 
