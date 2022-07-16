@@ -147,7 +147,7 @@
 .c-carousel__item__title {
     font-weight: 500;
     font-size: 1.3em;
-    color: rgb(var(--text-color-inverted));
+    color: rgb(var(--title-color-inverted));
 }
 
 .c-carousel__item__description {

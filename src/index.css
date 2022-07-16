@@ -57,7 +57,7 @@ body::after {
     width: 100%;
     font-size: 1rem;
     background-color: rgb(var(--main-color), .9);
-    backdrop-filter: blur(1rem);
+    backdrop-filter: blur(3rem);
     color: rgb(var(--text-color));
     scroll-behavior: smooth;
     transition: .3s;
@@ -125,80 +125,6 @@ body::after {
     color: rgb(var(--title-color));
     font-size: 2.5em;
     text-transform: uppercase;
-}
-
-/* NAV */
-
-.c-nav {
-    display: flex;
-    align-items: center;
-    text-transform: uppercase;
-}
-
-.c-nav__item {
-    padding: 10px 20px;
-    font-weight: 500;
-    font-size: 1.3em;
-    border-radius: .5rem;
-    color: rgb(var(--title-color));
-    margin-left: 20px;
-    transition: .3s;
-    cursor: pointer;
-}
-.c-nav__item:hover {
-    color: rgb(var(--accent-color));
-}
-
-.c-sidebar-btn {
-    display: none;
-    font-size: 1.5em;
-    padding: 10px 20px;
-    font-weight: bold;
-    border-radius: .5rem;
-    color: rgb(var(--title-color));
-    margin-left: 20px;
-    overflow: hidden;
-    cursor: pointer;
-}
-
-.c-theme {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5px 10px;
-    width: 5rem;
-    border-radius: 3rem;
-    background-color: rgb(var(--secondary-color));
-    font-size: 1.3em;
-    margin-left: 20px;
-    cursor: pointer;
-}
-
-.c-theme::before {
-    content: '';
-    position: absolute;
-    left: 8px;
-    width: 1.2em;
-    height: 1.2em;
-    border-radius: 50%;
-    background-color: rgb(var(--main-color));
-    transition: .2s;
-    box-shadow: 0 2px 3px rgba(0, 0, 0, .2);
-}
-.c-theme:hover::before {
-    transform: scale(1.05);
-}
-
-.c-theme--active::before {
-    left: calc((5rem - 1.2em) - 8px);
-}
-
-.c-theme--light {
-    color: rgba(var(--yellow-color), .9);
-}
-.c-theme--dark {
-    color: rgba(var(--blue-color), .9);
 }
 
 /* ========== CONTENT ========== */
@@ -399,6 +325,7 @@ body::after {
     position: absolute;
     top: 0;
     left: 0;
+    pointer-events: none;
 }
 
 .c-clouds-group__item {
@@ -443,10 +370,6 @@ body::after {
     .c-sidebar-btn {
         display: block;
     }
-
-    .c-form {
-        border-radius: 0 0 1rem 1rem;
-    }
 }
 
 @media (max-width: 768px) {
@@ -459,7 +382,7 @@ body::after {
         padding: 40px 20px;
     }
 
-    .c-section--presentation {
+    .c-section--introduction {
         margin-top: 40px;
     }
 

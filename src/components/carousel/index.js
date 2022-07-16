@@ -12,7 +12,7 @@ const createCarousel = () => {
                 <div class="c-carousel__item__info__effect">
                     <h3 class="c-carousel__item__title">Reprodutor Multimídia</h3>
                     <p class="c-carousel__item__description">Projeto grande em desenvolvimento para uso próprio, onde o objetivo era estudar e aprender sobre reproduções de mídias no navegador.  </br> (Inspirado no Reprodutor Multimídia da Microsoft)</p>
-                    <a target="__blank" href="https://reprodutor-multimidia-app.herokuapp.com/home" class="c-carousel__item__actions btn btn--secundary glare-effect" rel="nofollow, noreferrer, noopener, external">Saiba mais</a>
+                    <a target="__blank" href="https://reprodutor-multimidia-app.herokuapp.com/home" class="c-carousel__item__actions btn btn--primary glare-effect" rel="nofollow, noreferrer, noopener, external">Saiba mais</a>
                 </div>
             </div>
         </div>`,
@@ -22,7 +22,7 @@ const createCarousel = () => {
                 <div class="c-carousel__item__info__effect">
                     <h3 class="c-carousel__item__title">MiDesp</h3>
                     <p class="c-carousel__item__description">Projeto grande, onde o objetivo era criar um sistema de gerenciamento de gastos.</br> (Criação de conta indisponível para pessoas não autorizadas)</p>
-                    <a target="__blank" href="https://midesp.com.br" class="c-carousel__item__actions btn btn--secundary glare-effect" rel="nofollow, noreferrer, noopener, external">Saiba mais</a>
+                    <a target="__blank" href="https://midesp.com.br" class="c-carousel__item__actions btn btn--primary glare-effect" rel="nofollow, noreferrer, noopener, external">Saiba mais</a>
                 </div>
             </div>
         </div>`,
@@ -32,7 +32,7 @@ const createCarousel = () => {
                 <div class="c-carousel__item__info__effect">
                     <h3 class="c-carousel__item__title">To Do</h3>
                     <p class="c-carousel__item__description">Projeto básico desenvolvido para uso próprio, onde objetivo era criar um sistema de To do simples com as funções básicas como: adicionar, editar e remover. </br> (Inspirado no To Do da Microsoft)</p>
-                    <a target="__blank" href="https://wallaceprm.github.io/ToDo-App/" class="c-carousel__item__actions btn btn--secundary glare-effect" rel="nofollow, noreferrer, noopener, external">Saiba mais</a>
+                    <a target="__blank" href="https://wallaceprm.github.io/ToDo-App/" class="c-carousel__item__actions btn btn--primary glare-effect" rel="nofollow, noreferrer, noopener, external">Saiba mais</a>
                 </div>
             </div>
         </div>`,
@@ -42,7 +42,7 @@ const createCarousel = () => {
                 <div class="c-carousel__item__info__effect">
                     <h3 class="c-carousel__item__title">Web Game</h3>
                     <p class="c-carousel__item__description">Projeto básico desenvolvido para uso próprio, onde o objetivo era estudar e aprender sobre a criação de jogos para navegadores.</p>
-                    <a target="__blank" href="https://wallaceprm.github.io/web-game/" class="c-carousel__item__actions btn btn--secundary glare-effect" rel="nofollow, noreferrer, noopener, external">Saiba mais</a>
+                    <a target="__blank" href="https://wallaceprm.github.io/web-game/" class="c-carousel__item__actions btn btn--primary glare-effect" rel="nofollow, noreferrer, noopener, external">Saiba mais</a>
                 </div>
             </div>
         </div>`

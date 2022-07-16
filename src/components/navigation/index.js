@@ -9,8 +9,8 @@ const createNav = () => {
         const $sidebar = $(`
             <div class="c-sidebar">
                 <nav class="c-sidebar__nav">
-                    <a href="#resume" class="c-sidebar__item">Resumo</a>
                     <a href="#about" class="c-sidebar__item">Sobre</a>
+                    <a href="#resume" class="c-sidebar__item">Projetos</a>
                     <a href="#contact" class="c-sidebar__item">Contato</a>
                 </nav>
                 <div class="c-sidebar__footer">
@@ -36,8 +36,8 @@ const createNav = () => {
 
         $('.c-header__info').append(`
             <nav class="c-nav">
-                <a href="#resume" class="c-nav__item ripple-effect">Resumo</a>
                 <a href="#about" class="c-nav__item ripple-effect">Sobre</a>
+                <a href="#resume" class="c-nav__item ripple-effect">Projetos</a>
                 <a href="#contact" class="c-nav__item ripple-effect">contato</a>
                 <div class="c-theme">
                     <i class="c-theme--light fa-regular fa-sun"></i>

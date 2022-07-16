@@ -141,14 +141,21 @@ input, select, textarea, button {
     color: rgb(var(--accent-color));
 }
 
-.c--separator {
+.disabled {
+    opacity: .6;
+    pointer-events: none;
+}
+
+.c-separator {
     position: relative;
-    width: 100%;
+    margin: 0 auto;
+    width: 215px;
     height: .3rem;
     border-radius: .3rem;
     background: rgba(var(--primary-color), .9);
 }
-.c--separator::before {
+
+.c-separator::before {
     content: '';
     position: absolute;
     top: -3px;
