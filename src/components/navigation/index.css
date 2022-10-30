@@ -1,6 +1,4 @@
 
-/* ========== NAV ========== */
-
 .c-nav {
     display: flex;
     align-items: center;
@@ -13,7 +11,6 @@
     font-size: 1.3em;
     border-radius: .5rem;
     color: rgb(var(--title-color));
-    margin-left: 10px;
     transition: .3s;
     cursor: pointer;
 }

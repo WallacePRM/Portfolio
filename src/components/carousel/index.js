@@ -1,7 +1,7 @@
 const createCarousel = () => {
 
     let theme = getTheme();
-    if (theme === 'auto') {
+    if (theme === 'auto' || theme !== 'dark') {
         theme = 'light';
     }
 
@@ -12,7 +12,7 @@ const createCarousel = () => {
                 <div class="c-carousel__item__info__effect">
                     <h3 class="c-carousel__item__title">Reprodutor Multimídia</h3>
                     <p class="c-carousel__item__description">Projeto grande desenvolvido em React/Electron forge, onde o objetivo era estudar e aprender sobre reproduções de mídias no navegador.  </br> (Inspirado no Reprodutor Multimídia da Microsoft)</p>
-                    <a target="__blank" href="https://github.com/WallacePRM/reprodutor_multimidia_desktop/releases/tag/v1.0.0" class="c-carousel__item__actions btn btn--primary glare-effect" rel="nofollow, noreferrer, noopener, external">Saiba mais</a>
+                    <a target="__blank" href="https://github.com/WallacePRM/reprodutor_multimidia_desktop/releases" class="c-carousel__item__actions btn btn--primary glare-effect" rel="nofollow, noreferrer, noopener, external">Saiba mais</a>
                 </div>
             </div>
         </div>`,
