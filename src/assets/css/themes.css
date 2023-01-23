@@ -15,5 +15,5 @@
 }
 
 .theme--dark .c-app {
-    background: rgba(var(--secondary-color), .97);
+    background-color: rgba(var(--main-color), .95);
 }
