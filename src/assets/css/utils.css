@@ -183,7 +183,7 @@ input, select, textarea, button {
 }
 
 .card-template {
-    background: rgb(var(--main-color));
+    background: rgb(var(--main-color), .85);
     border-radius: 1rem;
     box-shadow: var(--box-shadow);
 }

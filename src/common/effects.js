@@ -21,22 +21,22 @@ const setVanillaEffect = () => {
     for (let i = 0; i < cards.length; i++) {
         VanillaTilt.init($(cards[i])[0], {
             reverse:                false,  // reverse the tilt direction
-            max:                    15,     // max tilt rotation (degrees)
+            max:                    5,     // max tilt rotation (degrees)
             startX:                 0,      // the starting tilt on the X axis, in degrees.
             startY:                 0,      // the starting tilt on the Y axis, in degrees.
             perspective:            1000,   // Transform perspective, the lower the more extreme the tilt gets.
-            scale:                  1,      // 2 = 200%, 1.5 = 150%, etc..
+            scale:                  1.01,      // 2 = 200%, 1.5 = 150%, etc..
             speed:                  300,    // Speed of the enter/exit transition
             transition:             true,   // Set a transition on enter/exit.
             axis:                   null,   // What axis should be disabled. Can be X or Y.
-            reset:                  true,   // If the tilt effect has to be reset on exit.
+            reset:                  false,   // If the tilt effect has to be reset on exit.
             easing:                 "cubic-bezier(.03,.98,.52,.99)",    // Easing on enter/exit.
             glare:                  true,  // if it should have a "glare" effect
-            "max-glare":            1,      // the maximum "glare" opacity (1 = 100%, 0.5 = 50%)
+            "max-glare":            .1,      // the maximum "glare" opacity (1 = 100%, 0.5 = 50%)
             "glare-prerender":      false,  // false = VanillaTilt creates the glare elements for you, otherwise
                                             // you need to add .js-tilt-glare>.js-tilt-glare-inner by yourself
             "mouse-event-element":  null,   // css-selector or link to an HTML-element that will be listening to mouse events
-            "full-page-listening":  false,  // If true, parallax effect will listen to mouse move events on the whole document, not only the selected element
+            "full-page-listening":  true,  // If true, parallax effect will listen to mouse move events on the whole document, not only the selected element
             gyroscope:              true,   // Boolean to enable/disable device orientation detection,
             gyroscopeMinAngleX:     -45,    // This is the bottom limit of the device angle on X axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the left border of the element;
             gyroscopeMaxAngleX:     45,     // This is the top limit of the device angle on X axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the right border of the element;
@@ -58,7 +58,7 @@ const setGlareEffect = () => {
             speed: 0,
             glare: true,
             perspective: 0,
-            "max-glare": .5,
+            "max-glare": .1,
         });
     }
 };

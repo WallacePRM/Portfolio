@@ -21,7 +21,7 @@
 }
 
 .c-carousel__button:hover {
-    background-color: rgb(var(--main-color), .5);
+    background-color: rgb(var(--main-color), .3);
 }
 
 .c-carousel__button--disabled {
@@ -58,7 +58,7 @@
 }
 
 .c-carousel__button:hover .c-carousel__button__icon {
-    transform: scale(.9);
+    transform: scale(.8);
 }
 
 /* CAROUSEL SCREEN */
@@ -112,6 +112,7 @@
     height: 100%;
     object-fit: cover;
     border-radius: 1rem;
+    opacity: .9;
     transition: .5s;
 }
 
@@ -121,7 +122,7 @@
     right: 0;
     height: 100%;
     width: 40%;
-    background-color: rgba(var(--main-color--inverted), .9);
+    background-color: rgba(var(--main-color--inverted), .85);
     color: rgb(var(--text-color--inverted));
     transition: .3s;
     opacity: 0;
@@ -173,19 +174,19 @@
 }
 
 .c-carousel-step__item {
-    height: 1em;
-    width: 1em;
+    height: 0.7em;
+    width: 1.5em;
     margin: 5px 10px;
-    background-color: rgb(var(--border-color));
+    background-color: rgb(var(--border-color), .85);
     transition: .2s;
-    border-radius: 50%;
+    border-radius: 0.3rem;
     cursor: pointer;
 }
 .c-carousel-step__item:hover {
     transform: scale(1.3);
 }
 .c-carousel-step__item--active {
-    background-color: rgb(var(--accent-color));
+    background-color: rgb(var(--accent-color), 85);
     transform: scale(1.3);
 }
 

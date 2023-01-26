@@ -265,7 +265,7 @@ body::after {
     flex: 1;
     display: flex;
     flex-direction: column;
-    background-color: rgb(var(--secondary-color));
+    background-color: rgb(var(--secondary-color), .85);
     border-radius: 1rem;
     padding: 40px;
 }
@@ -292,7 +292,7 @@ body::after {
 .c-form__item__textarea {
     font-size: .875em;
     padding: 10px;
-    background-color: rgb(var(--main-color));
+    background-color: rgb(var(--main-color), .9);
     box-shadow: var(--field-shadow);
     color: rgb(var(--text-color));
     border-radius: .3rem;
