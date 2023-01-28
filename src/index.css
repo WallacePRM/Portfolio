@@ -113,13 +113,12 @@ body::after {
 /* ========== HEADER ========== */
 
 .c-header {
-    position: absolute;
+    /* position: absolute; */
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 40px;
     width: 100%;
-    z-index: 1;
 }
 
 .c-header__info {
@@ -147,13 +146,14 @@ body::after {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    padding-bottom: 40px;
+    /* padding-bottom: 40px; */
 }
 
 .c-section {
     display: flex;
     min-height: 100vh;
     width: 100%;
+    overflow: hidden;
 }
 
 .c-section--introduction {
@@ -384,32 +384,6 @@ body::after {
     .c-sidebar-btn {
         display: block;
     }
-}
-
-@media (max-width: 768px) {
-
-    .c-app {
-        font-size: .8rem;
-    }
-
-    .c-header {
-        padding: 40px 20px;
-    }
-
-    .c-section--introduction {
-        margin-top: 40px;
-    }
-
-    .c-content__profile-img {
-        height: 15rem;
-        width: 15rem;
-    }
-
-    .card-template {
-        border-radius: 0;
-        box-shadow: none !important;
-        background-color: transparent;
-    }
 
     .c-form {
         border-radius: 0;
@@ -427,6 +401,32 @@ body::after {
     .c-container__img {
         position: absolute;
         height: 100%;
-        opacity: .7;
+        opacity: .5;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .c-app {
+        font-size: .8rem;
+    }
+
+    .c-header {
+        padding: 40px 20px;
+    }
+
+    /* .c-section--introduction {
+        margin-top: 40px;
+    } */
+
+    .c-content__profile-img {
+        height: 15rem;
+        width: 15rem;
+    }
+
+    .card-template {
+        border-radius: 0;
+        box-shadow: none !important;
+        background-color: transparent;
     }
 }

@@ -15,7 +15,7 @@ jQuery(() => {
 const init = () => {
 
     createNav();
-    createGithubGraphics();
+    // createGithubGraphics();
     createCarousel();
     createCloudsGroup();
     applyTheme();
@@ -69,7 +69,7 @@ const switchTheme = () => {
         saveTheme('dark');
     }
 
-    createGithubGraphics();
+    // createGithubGraphics();
     updateCarouselIitemImage();
 };
 
