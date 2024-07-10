@@ -6,7 +6,7 @@ const createCarousel = () => {
     }
 
     const listItems = [
-        `<div class="c-carousel__item">
+        `<div class="c-carousel__item card-3d-effect">
             <img class="c-carousel__item__img" src="assets/img/reprodutor_multimidia_${theme}.png">
             <div class="c-carousel__item__info">
                 <div class="c-carousel__item__info__effect">
@@ -16,7 +16,7 @@ const createCarousel = () => {
                 </div>
             </div>
         </div>`,
-        `<div class="c-carousel__item">
+        `<div class="c-carousel__item card-3d-effect">
             <img class="c-carousel__item__img" src="assets/img/midesp_${theme}.png">
             <div class="c-carousel__item__info">
                 <div class="c-carousel__item__info__effect">
@@ -26,7 +26,7 @@ const createCarousel = () => {
                 </div>
             </div>
         </div>`,
-        `<div class="c-carousel__item">
+        `<div class="c-carousel__item card-3d-effect">
             <img class="c-carousel__item__img" src="assets/img/todo_${theme}.png">
             <div class="c-carousel__item__info">
                 <div class="c-carousel__item__info__effect">
@@ -36,7 +36,7 @@ const createCarousel = () => {
                 </div>
             </div>
         </div>`,
-        `<div class="c-carousel__item">
+        `<div class="c-carousel__item card-3d-effect">
             <img class="c-carousel__item__img" src="assets/img/webgame.png">
             <div class="c-carousel__item__info">
                 <div class="c-carousel__item__info__effect">

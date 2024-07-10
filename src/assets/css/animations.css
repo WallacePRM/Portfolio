@@ -23,3 +23,17 @@
         opacity: 0;
     }
 }
+
+@keyframes rain {
+    0% {
+        transform: translateY(0%);
+        filter: brightness(.5);
+        opacity: .5;
+    }
+    100% {
+        transform: translateY(200%);
+        filter: brightness(1);
+        opacity: 0;
+    }
+}
+

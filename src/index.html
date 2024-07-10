@@ -56,14 +56,23 @@
                             </div>
                         </div>
                         <div class="c-container">
-                            <img class="c-content__profile-img" src="assets/img/img.png" alt="Wallace PRM">
-                            <div class="c-content__introduction-info">
+                            <div  class="c-content__profile">
+                                <img class="c-content__profile-img" src="assets/img/img.png" alt="Wallace PRM">
                                 <div class="c-connections">
-                                    <a class="c-connections__item" target="_blank" href="https://github.com/WallacePRM" rel="nofollow, noreferrer, noopener, external">
+                                    <a class="c-connections__item" target="_blank" href="https://github.com/WallacePRM" style="background-color: rgb(var(--gray-color))">
                                         <i class="fa-brands fa-github" title="Página no Github"></i>
                                     </a>
+                                    <a class="c-connections__item c-connections__item--instagram" target="_blank" href="https://www.instagram.com/wallace.p.r/" style="background-color: rgb(var(--pink-color))">
+                                        <i class="fa-brands fa-instagram" title="Perfil no Instagram"></i>
+                                    </a>
+                                    <a class="c-connections__item c-connections__item--facebook" target="_blank" href="https://www.facebook.com/wallace.wa.9/?locale=pt_BR">
+                                        <i class="fa-brands fa-facebook" title="Perfil no Facebook"></i>
+                                    </a>
                                 </div>
-                                <h3>Olá, me chamo <span class="highlight--text">Wallace</span></h3>
+                            </div>
+                            <div class="c-content__introduction-info">
+                                
+                                <h3>Olá, me chamo <span class="highlight--text">Wallace P. R. M.</span></h3>
                                 <p class="mt-20 mb-30">Este é um portfólio que contém algumas informações sobre mim.</p>
                                 <div class="c-content__buttons">
                                     <a href="#contact" class="btn ripple-effect glare-effect m-5">
@@ -78,7 +87,7 @@
                             </div>
                         </div>
                     </section>
-                    <section id="about" class="c-section">
+                    <section id="about" class="c-section c-section--about">
                         <div class="c-container">
                             <div class="c-container__title">
                                 <h2>Sobre <span class="highlight--text">Mim</span></h2>
@@ -89,7 +98,7 @@
                                 <div class="c-container__info">
                                     <div class="c-container__item">
                                         <h3 class="c-container__item__title">Quem sou eu?</h3>
-                                        <p>Me chamo Wallace Pires, sou de Governador Valadares / Minas Gerais.</p>
+                                        <p>Meu nome completo é Wallace Pires Rodrigues Miranda, sou de Governador Valadares / Minas Gerais.</p>
                                     </div>
                                     <div class="c-container__item">
                                         <h3 class="c-container__item__title">Qual o meu nível de conhecimento?</h3>
@@ -110,7 +119,7 @@
                             </div>
                         </div>
                     </section>
-                    <section id="resume" class="c-section">
+                    <section id="resume" class="c-section c-section--project">
                         <div class="c-container">
                             <div class="c-container__title">
                                 <h2>Proje <span class="highlight--text">tos</span></h2>
@@ -130,13 +139,15 @@
                                         <div class="c-github__graphics"></div>
                                     </div>
                                     <div class="c-carousel">
-                                        <div class="c-clouds-group"></div>
+                                        <div class="c-clouds-group">
+                                            <div class="c-rain-group"></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </section>
-                    <section id="contact" class="c-section">
+                    <section id="contact" class="c-section c-section--contact">
                         <div class="c-container">
                             <div class="c-container__title">
                                 <h2>Contacte<span class="highlight--text">-Me</span></h2>
@@ -144,33 +155,29 @@
                                 <div class="mt-20 mb-20 c-separator"></div>
                             </div>
                             <div class="c-container__content">
-                                <img class="c-container__img" src="assets/svg/platelet.svg"/>
-                                <div class="flex  c-container__info p">
-                                    <form class="c-form">
-                                        <h3 class="text-medium">Entrar em contato</h3>
-                                        <div class="c-form__item">
-                                            <i class="c-form__item__icon fa-regular fa-user"></i>
-                                            <input class="c-form__item__input item-focus-effect" type="text" name="name" placeholder="Nome" required>
-                                        </div>
-                                        <div class="c-form__item">
-                                            <i class="c-form__item__icon fa-regular fa-envelope"></i>
-                                            <input class="c-form__item__input item-focus-effect" type="email" name="email" placeholder="E-mail" required>
-                                        </div>
-                                        <div class="c-form__item">
-                                            <i class="c-form__item__icon fa-regular fa-message"></i>
-                                            <input class="c-form__item__input item-focus-effect" type="text" name="subject" placeholder="Assunto" required>
-                                        </div>
-                                        <div class="c-form__item">
-                                            <textarea name="message" class="c-form__item__textarea" placeholder="Mensagem" required></textarea>
-                                        </div>
-                                        <div class="c-form__item">
-                                            <button name="btn_send" class="btn btn--primary ripple-effect glare-effect" type="submit">
-                                                <span class="mr-10">Enviar</span>
-                                                <i class="btn__icon fa-solid fa-arrow-right-from-bracket"></i>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
+                                <img class="c-form__img" src="assets/svg/platelet.svg"/>
+                                <div class="c-clouds-group"></div>
+                                <form class="c-form">
+                                    <div class="c-clouds-group c-clouds-group--form-bottom-position"></div>
+                                    <div class="c-form__item">                  
+                                        <input class="c-form__item__input item-focus-effect" type="text" name="name" placeholder="Seu nome">
+                                    </div>
+                                    <div class="c-form__item">
+                                        <input class="c-form__item__input item-focus-effect" type="email" name="email" placeholder="Seu e-mail *" required>
+                                    </div>
+                                    <div class="c-form__item">
+                                        <input class="c-form__item__input item-focus-effect" type="text" name="subject" placeholder="Qual é o assunto?" required>
+                                    </div>
+                                    <div class="c-form__item">
+                                        <textarea name="message" class="c-form__item__textarea" placeholder="O que gostaria de dizer? *" required></textarea>
+                                    </div>
+                                    <div class="c-form__item">             
+                                        <button name="btn_send" class="c-btn-send ripple-effect glare-effect" type="submit">
+                                            <span class="c-btn-send__text">Enviar e-mail</span>
+                                            <i class="c-btn-send__icon fa-solid fa-arrow-right-from-bracket"></i>
+                                        </button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </section>
@@ -180,6 +187,7 @@
 
         <div class="c-scroll-top">
             <i class="fa-solid fa-arrow-up"></i>
+            <!-- <img class="c-scroll-top__img" src="./assets/svg/plane.svg" alt=""> -->
         </div>
 
         <!-- Sidebar -->

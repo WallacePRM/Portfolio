@@ -62,12 +62,11 @@ input, select, textarea, button {
 .btn {
     width: max-content;
     padding: 15px 30px;
-    border: 1px solid rgb(var(--border-color));
+    background-color: rgb(var(--border-color));
     color: rgb(var(--button-color));
     font-size: 1rem;
     font-weight: 500;
     border-radius: 3rem;
-    background: transparent;
     overflow: hidden;
     cursor: pointer;
 }
@@ -186,11 +185,12 @@ input, select, textarea, button {
     background: rgb(var(--main-color), .85);
     border-radius: 1rem;
     box-shadow: var(--box-shadow);
+    z-index: 1;
 }
 
 .card-3d-effect {
     box-shadow: var(--box-shadow);
-    transition: .3s;
+    transition: .3s cubic-bezier(0.075, 0.82, 0.165, 1);
     overflow: hidden;
 }
 

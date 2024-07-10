@@ -1,5 +1,5 @@
 const config = {
-    urlApiEmail: "https://wprm-send-email.herokuapp.com/email"
+    urlApiEmail: "https://send-email-api.fly.dev" //"https://wprm-send-email.herokuapp.com/email"
 };
 
 function isLocal() {

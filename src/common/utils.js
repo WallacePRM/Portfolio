@@ -22,3 +22,16 @@ const delay = (() => {
       timer = setTimeout(callback, ms);
     };
 })();
+
+const numberIsDecimal = (number) => {
+
+    const math = number / 2;
+    const strNumber = math.toString();
+    if (strNumber.search('.') === -1) {
+        console.log(false);
+        return false;
+    }
+
+    console.log(true);
+    return true;
+};

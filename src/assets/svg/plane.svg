@@ -1,0 +1,8 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M87 14L13 51.5L32.5 66.5L87 14Z" fill="#257AE3" stroke="black"/>
+<path d="M66.5 86.5L44 70L87 14.5L66.5 86.5Z" fill="#257AE3" stroke="black"/>
+<path d="M32.5 66L86.5 14.5L44 70L50.5 74.5L37.5 87L32.5 66Z" fill="white"/>
+<path d="M44 70L86.5 14.5L32.5 66L37.5 87M44 70L50.5 74.5L37.5 87M44 70L37.5 87" stroke="black"/>
+<path d="M13.5 51.5L32 42L46 53L32 66L13.5 51.5Z" fill="#2660C9" stroke="black"/>
+<path d="M53 58.5L44.5 69.5L66.5 85.5L70 71.5L53 58.5Z" fill="#2660C9" stroke="black"/>
+</svg>

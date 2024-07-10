@@ -8,14 +8,15 @@ jQuery(() => {
 
     rippleEffect($('.c-app'));
     setGlareEffect();
-    if ($(window).width() > 768) setVanillaEffect();
+    // if ($(window).width() > 768) setVanillaEffect();
+    setVanillaEffect();
     setScrollPosition();
 });
 
 const init = () => {
 
     createNav();
-    // createGithubGraphics();
+    createGithubGraphics();
     createCarousel();
     createCloudsGroup();
     applyTheme();
@@ -69,7 +70,7 @@ const switchTheme = () => {
         saveTheme('dark');
     }
 
-    // createGithubGraphics();
+    createGithubGraphics();
     updateCarouselIitemImage();
 };
 
@@ -94,12 +95,28 @@ const createGithubGraphics = () => {
 
 const createCloudsGroup = () => {
 
-    for (let i = 1; i < 4; i++) {
-        $('.c-clouds-group').append(`
-            <svg class="c-clouds-group__item c-clouds-group__item--${i}" width="128" height="77" viewBox="0 0 128 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+    let $cloud;
+
+    for (let i = 1; i < 5; i++) {
+
+        $cloud = $(`<div class="c-clouds-group__item c-clouds-group__item--${i}"></div>`);
+
+        $cloud.append(`
+            <svg class="c-clouds-group__item__img" width="128" height="77" viewBox="0 0 128 77" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M103 25C103 25.6733 102.973 26.3403 102.921 27.0001L103 27C116.807 27 128 38.1929 128 52C128 65.8071 116.807 77 103 77C102.327 77 101.66 76.9734 101 76.9212V77H20C8.9543 77 0 68.0457 0 57C0 45.9543 8.9543 37 20 37C22.0981 37 24.1207 37.3231 26.0209 37.9222C26.007 37.6165 26 37.3091 26 37C26 25.9543 34.9543 17 46 17C48.7785 17 51.4246 17.5666 53.8292 18.5905C56.6596 7.88886 66.4085 0 78 0C91.8071 0 103 11.1929 103 25Z" fill="white"/>
             </svg>
         `);
+
+        for (let i = 1; i < 4; i++) {
+            $cloud.append(`
+                <svg class="c-rain__drop c-rain__drop--${i} width="50" height="75" viewBox="0 0 50 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="25" cy="50" r="25" fill="#8FDBF3"/>
+                    <path d="M25 0L46.6506 37.5H3.34937L25 0Z" fill="#8FDBF3"/>
+                </svg>
+            `);
+        }
+
+        $('.c-clouds-group').append($cloud);
     }
 };
 
