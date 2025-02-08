@@ -1,10 +1,10 @@
 :root {
-    --main-color: 253, 253, 255;
-    --primary-color: 29, 33, 37;
-    --secondary-color: 236, 240, 244;
+    --main-color: 240, 240, 240;
+    --primary-color: 33, 33, 33;
+    --secondary-color: 230, 230, 230;
     --background-float-color: 0, 0, 0;
 
-    --main-color--inverted: 29, 33, 37;
+    --main-color--inverted: 33, 33, 33;
     --title-color--inverted: 255, 255, 255;
     --text-color--inverted: 235, 235, 235;
 

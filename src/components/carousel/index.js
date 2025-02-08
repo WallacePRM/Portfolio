@@ -11,7 +11,7 @@ const createCarousel = () => {
             <div class="c-carousel__item__info">
                 <div class="c-carousel__item__info__effect">
                     <h3 class="c-carousel__item__title">Reprodutor Multimídia</h3>
-                    <p class="c-carousel__item__description">Projeto grande desenvolvido em React/Electron forge, onde o objetivo era estudar e aprender sobre reproduções de mídias.  </br> (Inspirado no Reprodutor Multimídia da Microsoft)</p>
+                    <p class="c-carousel__item__description">Desenvolvido em React/Electron forge, tive com o objetivo de entender como funciona as aplicações integradas ao sistema.  </br> (Inspirado no Reprodutor Multimídia da Microsoft)</p>
                     <a target="__blank" href="https://github.com/WallacePRM/reprodutor_multimidia_desktop/releases" class="c-carousel__item__actions btn btn--primary glare-effect" rel="nofollow, noreferrer, noopener, external">Saiba mais</a>
                 </div>
             </div>
@@ -21,7 +21,7 @@ const createCarousel = () => {
             <div class="c-carousel__item__info">
                 <div class="c-carousel__item__info__effect">
                     <h3 class="c-carousel__item__title">MiDesp</h3>
-                    <p class="c-carousel__item__description">Projeto grande, onde o objetivo era criar um sistema de gerenciamento de gastos.</br> (Criação de conta indisponível para pessoas não autorizadas)</p>
+                    <p class="c-carousel__item__description">Gerenciador de gastos. Projeto de uso pessoal ainda em desenvolvimento.</br> (Criação de conta indisponível para pessoas não autorizadas)</p>
                     <a target="__blank" href="https://midesp.com.br" class="c-carousel__item__actions btn btn--primary glare-effect" rel="nofollow, noreferrer, noopener, external">Saiba mais</a>
                 </div>
             </div>
@@ -31,17 +31,17 @@ const createCarousel = () => {
             <div class="c-carousel__item__info">
                 <div class="c-carousel__item__info__effect">
                     <h3 class="c-carousel__item__title">To Do</h3>
-                    <p class="c-carousel__item__description">Projeto básico desenvolvido para uso próprio, onde objetivo era criar um sistema de To do simples com as funções básicas como: adicionar, editar e remover. </br> (Inspirado no To Do da Microsoft)</p>
+                    <p class="c-carousel__item__description">Uma simples lista de tarefas com as funções básicas como: adicionar, editar e remover. </br> (Inspirado no To Do da Microsoft)</p>
                     <a target="__blank" href="https://wallaceprm.github.io/ToDo-App/" class="c-carousel__item__actions btn btn--primary glare-effect" rel="nofollow, noreferrer, noopener, external">Saiba mais</a>
                 </div>
             </div>
         </div>`,
         `<div class="c-carousel__item card-3d-effect">
-            <img class="c-carousel__item__img" src="assets/img/webgame.png">
+            <img class="c-carousel__item__img" src="assets/img/webgame2.png">
             <div class="c-carousel__item__info">
                 <div class="c-carousel__item__info__effect">
                     <h3 class="c-carousel__item__title">Web Game</h3>
-                    <p class="c-carousel__item__description">Projeto básico desenvolvido para uso próprio, onde o objetivo era estudar e aprender sobre a criação de jogos para navegadores.</p>
+                    <p class="c-carousel__item__description">Projeto básico mas com um grande interesse no futuro. Desenvolvido a fim de entender como seria a criação de jogos para navegadores.</p>
                     <a target="__blank" href="https://wallaceprm.github.io/web-game/" class="c-carousel__item__actions btn btn--primary glare-effect" rel="nofollow, noreferrer, noopener, external">Saiba mais</a>
                 </div>
             </div>
@@ -49,11 +49,11 @@ const createCarousel = () => {
     ];
     const itemsCount =  listItems.length;
 
-    const $carousel = $(`
+    const $carouselScreen = $(`
         <div class="c-carousel__screen card-template"></div>
     `);
     for (let i = 0; i < itemsCount; i++) {
-        $carousel.append(listItems[i]);
+        $carouselScreen.append(listItems[i]);
     }
 
     const $carouselStep = $(`<div class="c-carousel-step"></div>`);
@@ -78,17 +78,17 @@ const createCarousel = () => {
     $carouselNav.find('[name="next_c_button"]').on('click', handleCarouselAction);
     $carouselNav.find('[name="prev_c_button"]').on('click', handleCarouselAction);
     $carouselStep.find('.c-carousel-step__item').on('click', handleSkipCarouselScreen);
-    $carousel.find('.c-carousel__item').on({
+    $carouselScreen.find('.c-carousel__item').on({
         mouseenter: onCarouselHoverIn,
         mouseleave: onCarouselHoverOut
     });
 
-    $carousel.append($carouselNav);
-    $('.c-carousel').prepend($carousel);
+    $carouselScreen.append($carouselNav);
+    $('.c-carousel').prepend($carouselScreen);
     $('.c-carousel').append($carouselStep);
 };
 
-const resetCarouselScreen = () => {
+const resetCarousel = () => {
 
     const item = $('.c-carousel__item')[0];
     $(item).css('margin-left', '0');
@@ -132,7 +132,7 @@ const getCarouselStatus = () => {
     return carouselDisabled !== null ? carouselDisabled : false;
 };
 
-const toggleCarouselActions = (action) => {
+const toggleCarouselActionsDisplay = (action) => {
 
     const carouselWidth = $('.c-carousel').width() + 20;
     const item = $('.c-carousel__screen').children(":first");
@@ -203,7 +203,7 @@ const handleCarouselAction = (e) => {
         margin = carouselWidth - (margin * -1);
 
         // Ativar/Desativar botões do carrossel
-        toggleCarouselActions('prev');
+        toggleCarouselActionsDisplay('prev');
 
         // Alterar tela ativa
         if (margin > 0) {
@@ -220,7 +220,7 @@ const handleCarouselAction = (e) => {
         margin = carouselWidth + (margin * -1);
 
         // Ativar/Desativar botões do carrossel
-        toggleCarouselActions('next');
+        toggleCarouselActionsDisplay('next');
 
         // Alterar tela ativa
         if (margin >= (carouselWidth * $('.c-carousel__item').toArray().length)) {
@@ -253,7 +253,7 @@ const handleSkipCarouselScreen = (e) => {
     saveCarouselStep(step);
 
     setTimeout(() => {
-        if (step !== lastStep) toggleCarouselActions(step > lastStep ? 'next' : 'prev');
+        if (step !== lastStep) toggleCarouselActionsDisplay(step > lastStep ? 'next' : 'prev');
     }, 200);
 
 };

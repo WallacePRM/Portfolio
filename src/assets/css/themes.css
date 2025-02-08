@@ -1,10 +1,10 @@
 .theme--dark {
-    --main-color: 29, 33, 37;
-    --secondary-color: 37, 40, 44;
+    --main-color: 33, 33, 33;
+    --secondary-color: 40, 40, 40;
 
     --main-color--inverted: 255, 255, 255;
     --title-color--inverted: 34, 34, 34;
-    --text-color--inverted: 34, 34, 34;
+    --text-color--inverted: 55, 55, 55;
 
     --title-color: 255, 255, 255;
     --text-color: 169, 170, 175;
@@ -15,5 +15,9 @@
 }
 
 .theme--dark .c-app {
-    background-color: rgba(var(--main-color), .95);
+    background-color: rgba(var(--main-color), 1);
+}
+
+.theme--dark .c-clouds-group__item__img {
+    filter: invert(.7);
 }

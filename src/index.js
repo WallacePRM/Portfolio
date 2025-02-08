@@ -8,7 +8,6 @@ jQuery(() => {
 
     rippleEffect($('.c-app'));
     setGlareEffect();
-    // if ($(window).width() > 768) setVanillaEffect();
     setVanillaEffect();
     setScrollPosition();
 });
@@ -32,7 +31,7 @@ const binds = () => {
 const onResize = () => {
 
     sidebarVisibilty();
-    resetCarouselScreen();
+    resetCarousel();
 };
 
 const setScrollTopVisibility = () => {
@@ -150,14 +149,13 @@ const handleSendEmail = async (e) => {
     const form = e.currentTarget;
     const $btn = $(form).find('[name="btn_send"]');
 
-    $btn.find('.btn__icon').remove();
-    $btn.append(`<i class="btn__icon fa-solid fa-spinner fa-spin-pulse"></i>`);
-    $btn.attr('disabled', 'disabled');
-    $btn.addClass('disabled');
-
-    $(form).find(':input').attr('disabled', 'disabled');
-
     try {
+
+        $btn.html(`<i class="fa-solid fa-spinner fa-spin-pulse"></i>`);
+        $btn.attr('disabled', 'disabled');
+        $btn.addClass('disabled');
+        $(form).find(':input').attr('disabled', 'disabled');
+
         const config = {
             name: form.name.value,
             email: form.email.value,
@@ -176,8 +174,7 @@ const handleSendEmail = async (e) => {
     }
     finally {
         $(form).find(':input').attr('disabled', null);
-        $btn.find('.btn__icon').remove();
-        $btn.append(`<i class="btn__icon fa-solid fa-arrow-right-from-bracket"></i>`);
+        $btn.html(`<i class="fa-solid fa-paper-plane"></i>`);
         $btn.attr('disabled', null);
         $btn.removeClass('disabled');
     }

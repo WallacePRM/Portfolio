@@ -38,7 +38,7 @@
     padding: 5px 10px;
     width: 5rem;
     border-radius: 3rem;
-    background-color: rgb(var(--secondary-color));
+    background-color: rgb(var(--border-color));
     font-size: 1.3em;
     margin-left: 20px;
     cursor: pointer;

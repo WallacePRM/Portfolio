@@ -31,17 +31,6 @@
     <body>
         <div id="root" >
             <div class="c-app no-select">
-                <!-- <header class="c-header">
-                    <div class="c-header__info">
-                        <h1 class="c-header__title">
-                            Port<span class="highlight--text ml-10">fólio~</span>
-                            <div class="c-clouds-group"></div>
-                        </h1>
-
-                        <i name="btn_sidebar" class="c-sidebar-btn glare-effect fa-solid fa-bars"></i>
-
-                    </div>
-                </header> -->
                 <main class="c-content">
                     <section class="c-section c-section--introduction">
                         <div class="c-header">
@@ -98,22 +87,25 @@
                                 <div class="c-container__info">
                                     <div class="c-container__item">
                                         <h3 class="c-container__item__title">Quem sou eu?</h3>
-                                        <p>Meu nome completo é Wallace Pires Rodrigues Miranda, sou de Governador Valadares / Minas Gerais.</p>
+                                        <p>Me chamo Wallace Pires Rodrigues Miranda, tenho 23 anos e atualmente moro em Governador Valadares/Minas Gerais</p>
                                     </div>
                                     <div class="c-container__item">
                                         <h3 class="c-container__item__title">Qual o meu nível de conhecimento?</h3>
-                                        <ul>
+                                        <ul class="c-container__item__description">
                                             <li><div class="b-green"></div>Conhecimento avançado em HTML, CSS, JAVASCRIPT e TYPESCRIPT.</li>
                                             <li><div class="b-yellow"></div>Conhecimento intermediário em frameworks. (REACT)</li>
-                                            <li><div class="b-yellow"></div>Conhecimento intermediário em banco de dados. (POSTGRESQL)</li>
+                                            <li><div class="b-red"></div>Conhecimento intermediário em banco de dados. (POSTGRESQL)</li>
                                             <li><div class="b-red"></div>Conhecimento básico em Webpack.</li>
                                             <li><div class="b-red"></div>Conhecimento básico em NodeJS.</li>
-                                            <li><div class="b-red"></div>Conhecimento básico em Git.</li>
+                                            <li><div class="b-yellow"></div>Conhecimento básico em Git.</li>
                                         </ul>
                                     </div>
                                     <div class="c-container__item">
                                         <h3 class="c-container__item__title">Quais são os meus planos?</h3>
-                                        <p>Atualmente estou estudando sobre Frameworks, Design patterns e outros padrões na área de Back-end e Front-end. No futuro, pretendo aprender outras linguagens como C#.</p>
+                                        <ul class="c-container__item__description">
+                                            <li>Recentemente entrei para o mundo Linux, e pretendo me aprofundar mais. Quero aprender mais sobre a criação de apps e se possível contribuir para a comunidade.</li>
+                                            <li>Também pretendo aprender uma nova linguagem que possa ser utilizada para outros meios, como o C# para a criação de jogos.</li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -159,24 +151,28 @@
                                 <div class="c-clouds-group"></div>
                                 <form class="c-form">
                                     <div class="c-clouds-group c-clouds-group--form-bottom-position"></div>
-                                    <div class="c-form__item">                  
-                                        <input class="c-form__item__input item-focus-effect" type="text" name="name" placeholder="Seu nome">
+                                    <div class="c-form__item">
+                                        <i class="c-form__item__icon fa-solid fa-user"></i>            
+                                        <input class="c-form__item__input item-focus-effect" type="text" name="name" placeholder="Seu nome" maxlength="50">
                                     </div>
                                     <div class="c-form__item">
-                                        <input class="c-form__item__input item-focus-effect" type="email" name="email" placeholder="Seu e-mail *" required>
+                                        <i class="c-form__item__icon fa-solid fa-envelope"></i>        
+                                        <input class="c-form__item__input item-focus-effect" type="email" name="email" placeholder="Seu e-mail *" required maxlength="">
                                     </div>
                                     <div class="c-form__item">
-                                        <input class="c-form__item__input item-focus-effect" type="text" name="subject" placeholder="Qual é o assunto?" required>
+                                        <i class="c-form__item__icon fa-solid fa-edit"></i>        
+                                        <input class="c-form__item__input item-focus-effect" type="text" name="subject" placeholder="Qual é o assunto?">
                                     </div>
                                     <div class="c-form__item">
-                                        <textarea name="message" class="c-form__item__textarea" placeholder="O que gostaria de dizer? *" required></textarea>
-                                    </div>
-                                    <div class="c-form__item">             
-                                        <button name="btn_send" class="c-btn-send ripple-effect glare-effect" type="submit">
-                                            <span class="c-btn-send__text">Enviar e-mail</span>
-                                            <i class="c-btn-send__icon fa-solid fa-arrow-right-from-bracket"></i>
+                                        <i class="c-form__item__icon fa-solid fa-message"></i>        
+                                        <textarea name="message" class="c-form__item__textarea" placeholder="O que gostaria de dizer? *" required maxlength="200"></textarea>
+                                        <button name="btn_send" class="c-btn-send ripple-effect glare-effect" type="submit" title="Enviar mensagem">
+                                            <i class="fa-solid fa-paper-plane"></i>
                                         </button>
                                     </div>
+                                    <!-- <div class="c-form__item">            
+                                        
+                                    </div> -->
                                 </form>
                             </div>
                         </div>
@@ -195,7 +191,8 @@
 
         <!-- SCRIPTS -->
 
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="libs/vanilla-tilt/vanilla-tilt.min.js"></script>
         <script src="libs/toast-notify/toastnotify.js"></script>
 

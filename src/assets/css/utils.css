@@ -182,7 +182,7 @@ input, select, textarea, button {
 }
 
 .card-template {
-    background: rgb(var(--main-color), .85);
+    background: rgb(var(--main-color));
     border-radius: 1rem;
     box-shadow: var(--box-shadow);
     z-index: 1;
@@ -196,16 +196,6 @@ input, select, textarea, button {
 
 .card-3d-effect:hover {
     box-shadow: 20px 20px 50px rgba(0, 0, 0, .2);
-}
-
-.b-red {
-    background: rgb(var(--red-color));
-}
-.b-yellow {
-    background: rgb(var(--yellow-color));
-}
-.b-green {
-    background: rgb(var(--green-color));
 }
 
 .toastnotify .vh {
