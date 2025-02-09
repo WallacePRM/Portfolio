@@ -1,6 +1,6 @@
 .theme--dark {
-    --main-color: 33, 33, 33;
-    --secondary-color: 40, 40, 40;
+    --main-color: 40, 40, 40;
+    --secondary-color: 35, 35, 35;
 
     --main-color--inverted: 255, 255, 255;
     --title-color--inverted: 34, 34, 34;
@@ -9,13 +9,13 @@
     --title-color: 255, 255, 255;
     --text-color: 169, 170, 175;
     --text-color--light: 129, 130, 140;
-    --border-color: 74, 74, 84;
+    --border-color: 44, 44, 54;
     --border: 1px solid rgb(var(--border-color));
     --button-color: 255, 255, 255;
 }
 
 .theme--dark .c-app {
-    background-color: rgba(var(--main-color), 1);
+    background-color: rgba(var(--secondary-color), 1);
 }
 
 .theme--dark .c-clouds-group__item__img {

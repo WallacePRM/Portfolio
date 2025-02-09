@@ -15,7 +15,7 @@ jQuery(() => {
 const init = () => {
 
     createNav();
-    createGithubGraphics();
+    loadGithubStats();
     createCarousel();
     createCloudsGroup();
     applyTheme();
@@ -69,7 +69,7 @@ const switchTheme = () => {
         saveTheme('dark');
     }
 
-    createGithubGraphics();
+    loadGithubStats();
     updateCarouselIitemImage();
 };
 
@@ -82,14 +82,28 @@ const applyTheme = () => {
     }
 };
 
-const createGithubGraphics = () => {
+const loadGithubStats = () => {
 
     const theme = getTheme();
 
-    $('.c-github__graphics').html(`
-        <img class="card-template c-github__graphics__item" height="180em" src="https://github-readme-stats.vercel.app/api?username=WallacePRM&show_icons=true&theme=${theme === 'dark' ? 'git_dark' : 'light'}&include_all_commits=true&count_private=true&hide_border=true&locale=pt-br&bg_color=ffffff00&text_color=${theme === 'dark' ? 'A9AAAF' : '222'}"/>
-        <img class="card-template c-github__graphics__item" height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=WallacePRM&layout=compact&langs_count=7&theme=${theme === 'dark' ? 'git_dark' : 'light'}&hide_border=true&locale=pt-br&bg_color=ffffff00&text_color=${theme === 'dark' ? 'A9AAAF' : '222'}"/>
+    const $githubSkills = $(`
+        <div class="c-github__skills">
+            <img class="c-github__skills__item" alt="WPRM-Js" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg" />
+            <img class="c-github__skills__item" alt="WPRM-Ts" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-plain.svg" />
+            <img class="c-github__skills__item" alt="WPRM-HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" />
+            <img class="c-github__skills__item" alt="WPRM-CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" />
+            <img class="c-github__skills__item" alt="WPRM-React" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" />
+        </div>
     `);
+    const $githubGraph = $(`
+        <div class="c-github__graphics">
+            <img class="c-github__graphics__item" height="180em" src="https://github-readme-stats.vercel.app/api?username=WallacePRM&show_icons=true&theme=${theme === 'dark' ? 'git_dark' : 'light'}&include_all_commits=true&count_private=true&hide_border=true&locale=pt-br&bg_color=ffffff00&text_color=${theme === 'dark' ? 'A9AAAF' : '222'}"/>
+            <img class="c-github__graphics__item" height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=WallacePRM&layout=compact&langs_count=7&theme=${theme === 'dark' ? 'git_dark' : 'light'}&hide_border=true&locale=pt-br&bg_color=ffffff00&text_color=${theme === 'dark' ? 'A9AAAF' : '222'}"/>
+        </div>
+    `);
+
+    $('.c-github').html('');
+    $('.c-github').append($githubSkills).append($githubGraph);
 };
 
 const createCloudsGroup = () => {
