@@ -42,7 +42,7 @@ const createCarousel = () => {
                 <div class="c-carousel__item__info__effect">
                     <h3 class="c-carousel__item__title">Web Game</h3>
                     <p class="c-carousel__item__description">Projeto básico mas com um grande interesse no futuro. Desenvolvido a fim de entender como seria a criação de jogos para navegadores.</p>
-                    <a target="__blank" href="https://wallaceprm.github.io/web-game/" class="c-carousel__item__actions btn btn--primary glare-effect" rel="nofollow, noreferrer, noopener, external">Saiba mais</a>
+                    <a target="__blank" href="https://wallaceprm.github.io/web-game/src" class="c-carousel__item__actions btn btn--primary glare-effect" rel="nofollow, noreferrer, noopener, external">Saiba mais</a>
                 </div>
             </div>
         </div>`
