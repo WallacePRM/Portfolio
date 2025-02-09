@@ -125,7 +125,7 @@
     right: 0;
     height: 100%;
     width: 40%;
-    background-color: rgba(var(--main-color--inverted), .85);
+    background-color: rgba(var(--main-color--inverted), .5);
     color: rgb(var(--text-color--inverted));
     transition: .3s;
     opacity: 0;
@@ -169,8 +169,7 @@
     font-weight: normal;
     font-size: 1.2em;
     margin: 1rem 0;
-    /* text-shadow: 0 0 2px rgba(0, 0, 0, .25); */
-    color: rgb(var(--text-color-inverted));
+    text-shadow: 0 0 2px rgba(0, 0, 0, .15);
     overflow: hidden;
     overflow-y: auto;
     flex: 1;
@@ -185,7 +184,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px 0;
+    padding: 40px 0;
     transition: .2s;
 }
 
@@ -266,7 +265,7 @@
     }
 
     .c-carousel__item__title {
-        color: rgb(var(--text-color));
+        color: rgb(var(--title-color));
         font-weight: bold;
         margin-top: 1rem;
     }

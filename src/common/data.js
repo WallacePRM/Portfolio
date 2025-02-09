@@ -1,6 +1,10 @@
 const getTheme = () => {
 
-    return localStorage.getItem('theme');
+    const theme = localStorage.getItem('theme');
+    const prefersColorScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+    if (theme) return theme;
+    if (prefersColorScheme) return 'dark';
 };
 
 const saveTheme = (theme) => {

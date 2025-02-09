@@ -19,6 +19,22 @@ const init = () => {
     createCarousel();
     createCloudsGroup();
     applyTheme();
+    setWelcomeTitle();
+};
+
+const setWelcomeTitle = () => {
+
+    const hours = new Date().getHours();
+    let welcomeMessage;
+
+    if (hours > 0 && hours < 12)
+        welcomeMessage = 'Bom dia ';
+    else if (hours >= 12 && hours <= 18)
+        welcomeMessage = 'Boa tarde ';
+    else if (hours > 18 && hours === 0)
+        welcomeMessage = 'Boa noite ';
+
+    $('.welcome-title').prepend(welcomeMessage);
 };
 
 const binds = () => {

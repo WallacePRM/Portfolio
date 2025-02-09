@@ -404,10 +404,6 @@ body::after {
 
 /* GITHUB */
 
-.c-section--about .c-container__content {
-    justify-content: flex-start;
-}
-
 .c-github {
     display: flex;
     align-items: center;
@@ -424,11 +420,7 @@ body::after {
     width: 100%;
     margin-bottom: .5rem;
 }
-.c-github__graphics {
-    /* display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 1rem; */
-}
+
 .c-github__graphics__item {
     width: 100%;
 }
@@ -555,7 +547,7 @@ body::after {
     }
 
     .c-header {
-        padding: 40px 20px;
+        padding: 20px;
     }
 
     .c-container {
@@ -570,8 +562,8 @@ body::after {
     }
 
     .c-content__profile-img {
-        height: 15rem;
-        width: 15rem;
+        height: 12.5rem;
+        width: 12.5rem;
     }
 
     .c-form__item {
