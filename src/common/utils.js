@@ -1,37 +1,57 @@
 
 const componentToHex = (c) => {
-    var hex = c.toString(16);
-    return hex.length == 1 ? "0" + hex : hex;
+  var hex = c.toString(16);
+  return hex.length == 1 ? "0" + hex : hex;
 };
 
 const rgbToHex = (r, g, b) => {
-    return componentToHex(r) + componentToHex(g) + componentToHex(b);
+  return componentToHex(r) + componentToHex(g) + componentToHex(b);
 };
 
 const convertRgbToHex = (color) => {
 
-    let c = color.split(',', 3);
-    return rgbToHex(parseInt(c[0]), parseInt(c[1]), parseInt(c[2]));
+  let c = color.split(',', 3);
+  return rgbToHex(parseInt(c[0]), parseInt(c[1]), parseInt(c[2]));
 };
 
 const delay = (() => {
 
-    let timer = 0;
-    return (callback, ms) => {
-      clearTimeout(timer);
-      timer = setTimeout(callback, ms);
-    };
+  let timer = 0;
+  return (callback, ms) => {
+    clearTimeout(timer);
+    timer = setTimeout(callback, ms);
+  };
 })();
 
 const numberIsDecimal = (number) => {
 
-    const math = number / 2;
-    const strNumber = math.toString();
-    if (strNumber.search('.') === -1) {
-        console.log(false);
-        return false;
-    }
+  const math = number / 2;
+  const strNumber = math.toString();
+  if (strNumber.search('.') === -1) {
+    return false;
+  }
 
-    console.log(true);
-    return true;
+  return true;
+};
+
+const sortAsc = (a, b) => {
+
+  if (a > b)
+    return 1;
+
+  if (a < b)
+    return -1;
+
+  return 0;
+};
+
+const sortDesc = (a, b) => {
+
+  if (a > b)
+    return -1;
+
+  if (a < b)
+    return 1;
+
+  return 0;
 };

@@ -1,108 +1,130 @@
+let carouselInstance = null;
+
 jQuery(() => {
 
-    init();
-    binds();
+  init();
+  binds();
 
-    $(window).on('resize', onResize).resize();
-    $('.c-scroll-top').on('click', handleScrollTop);
+  $(window).on('resize', onResize).resize();
+  $('.c-scroll-top').on('click', handleScrollTop);
 
-    rippleEffect($('.c-app'));
-    setGlareEffect();
-    setVanillaEffect();
-    setScrollPosition();
+  rippleEffect($('.c-app'));
+  setGlareEffect();
+  setVanillaEffect();
+  setScrollPosition();
 });
 
 const init = () => {
 
-    createNav();
-    loadGithubStats();
-    createCarousel();
-    createCloudsGroup();
-    applyTheme();
-    setWelcomeTitle();
-};
-
-const setWelcomeTitle = () => {
-
-    const hours = new Date().getHours();
-    let welcomeMessage;
-
-    if (hours > 0 && hours < 12)
-        welcomeMessage = 'Bom dia ';
-    else if (hours >= 12 && hours <= 18)
-        welcomeMessage = 'Boa tarde ';
-    else if (hours > 18 && hours === 0)
-        welcomeMessage = 'Boa noite ';
-
-    $('.welcome-title').prepend(welcomeMessage);
+  createNav();
+  createCloudsGroup();
+  applyTheme();
+  setWelcomeTitle();
+  createCarousel();
 };
 
 const binds = () => {
 
-    $('.c-app').on('scroll', setScrollTopVisibility);
-    $('[name="btn_sidebar"]').on('click', handleOpenSidebar);
-    $('.c-form').on('submit', handleSendEmail);
+  $('.c-app').on('scroll', setScrollTopVisibility);
+  $('[name="btn_sidebar"]').on('click', handleOpenSidebar);
+  $('.c-form').on('submit', handleSendEmail);
+};
+
+const createCarousel = () => {
+
+  const theme = getTheme();
+  const items = [{
+    title: "Midesp",
+    description: "Gerenciador de gastos. Projeto de uso pessoal ainda em desenvolvimento.</br> (Criação de conta indisponível para pessoas não autorizadas).",
+    img: `assets/img/midesp_${theme}.png`,
+    link: "https://beta.midesp.com.br"
+  }, {
+    title: "Reprodutor Multimidia",
+    description: "Desenvolvido em React/Electron forge, tive com o objetivo de entender como funciona as aplicações integradas ao sistema.  </br> (Inspirado no Reprodutor Multimídia da Microsoft).",
+    img: `assets/img/reprodutor_multimidia_${theme}.png`,
+    link: "https://github.com/WallacePRM/reprodutor_multimidia_desktop/releases"
+  }, {
+    title: "Web Game",
+    description: "Projeto básico mas com um grande interesse no futuro. Desenvolvido a fim de entender como seria a criação de jogos para navegadores.",
+    img: `assets/img/webgame.png`,
+    link: "https://wallaceprm.github.io/web-game/src"
+  }, {
+    title: "To Do",
+    description: "Uma simples lista de tarefas com as funções básicas como: adicionar, editar e remover. </br> (Inspirado no To Do da Microsoft).",
+    img: `assets/img/todo_${theme}.png`,
+    link: "https://wallaceprm.github.io/ToDo-App/"
+  }];
+
+  carouselInstance = new Carousel(document.getElementById("carousel"), items);
+};
+
+const setWelcomeTitle = () => {
+
+  const hours = new Date().getHours();
+  let welcomeMessage = 'Bom dia ';
+
+  if (hours >= 12 && hours <= 18)
+    welcomeMessage = 'Boa tarde ';
+  else if (hours > 18 && hours === 0)
+    welcomeMessage = 'Boa noite ';
+
+  $('.welcome-title').prepend(welcomeMessage);
 };
 
 const onResize = () => {
 
-    sidebarVisibilty();
-    resetCarousel();
+  sidebarVisibilty();
+  if (carouselInstance)
+    carouselInstance.resetCarousel();
 };
 
 const setScrollTopVisibility = () => {
 
-    const scrollPosition = $('.c-app').scrollTop();
-    const lastScrollPosition = getScrollPosition();
+  const scrollPosition = $('.c-app').scrollTop();
+  const lastScrollPosition = parseInt(getScrollPosition());
 
-    if (scrollPosition > 100 && scrollPosition < lastScrollPosition) {
-        $('.c-scroll-top').addClass('c-scroll-top--visible');
-    }
-    else {
-        $('.c-scroll-top').removeClass('c-scroll-top--visible');
-    }
+  if (scrollPosition > 100 && scrollPosition < lastScrollPosition) {
+    $('.c-scroll-top').addClass('c-scroll-top--visible');
+  }
+  else {
+    $('.c-scroll-top').removeClass('c-scroll-top--visible');
+  }
 
-    delay(() => saveScrollPosition(scrollPosition), 100);
+  delay(() => saveScrollPosition(scrollPosition), 10);
 };
 
 const setScrollPosition = () => {
 
-    const scrollPosition = getScrollPosition();
-    $('.c-app').scrollTop(scrollPosition);
+  const scrollPosition = getScrollPosition();
+  $('.c-app').scrollTop(scrollPosition);
 };
 
 const switchTheme = () => {
 
-    const isDark = $('body').is('.theme--dark');
-    if (isDark) {
+  const isDark = $('body').is('.theme--dark');
+  if (isDark)
+    $('body').removeClass('theme--dark');
+  else
+    $('body').addClass('theme--dark');
 
-        $('body').removeClass('theme--dark');
-        saveTheme('light');
-    }
-    else {
-
-        $('body').addClass('theme--dark');
-        saveTheme('dark');
-    }
-
-    loadGithubStats();
-    updateCarouselIitemImage();
+  loadGithubStats();
+  carouselInstance.updateCarouselIitemImage();
 };
 
 const applyTheme = () => {
 
-    const theme = getTheme();
-    if (theme === 'dark') {
-        $('body').addClass('theme--dark');
-        $('.c-theme').addClass('c-theme--active');
-    }
+  const theme = getTheme();
+  if (theme === 'dark') {
+    $('body').addClass('theme--dark');
+    $('.c-theme').addClass('c-theme--active');
+  }
 };
 
 const loadGithubStats = () => {
 
-    const theme = getTheme();
+  const theme = getTheme();
 
-    const $githubSkills = $(`
+  const $githubSkills = $(`
         <div class="c-github__skills">
             <img class="c-github__skills__item" alt="WPRM-Js" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg" />
             <img class="c-github__skills__item" alt="WPRM-Ts" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-plain.svg" />
@@ -111,101 +133,101 @@ const loadGithubStats = () => {
             <img class="c-github__skills__item" alt="WPRM-React" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" />
         </div>
     `);
-    const $githubGraph = $(`
+  const $githubGraph = $(`
         <div class="c-github__graphics">
             <img class="c-github__graphics__item" height="180em" src="https://github-readme-stats.vercel.app/api?username=WallacePRM&show_icons=true&theme=${theme === 'dark' ? 'git_dark' : 'light'}&include_all_commits=true&count_private=true&hide_border=true&locale=pt-br&bg_color=ffffff00&text_color=${theme === 'dark' ? 'A9AAAF' : '222'}"/>
             <img class="c-github__graphics__item" height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=WallacePRM&layout=compact&langs_count=7&theme=${theme === 'dark' ? 'git_dark' : 'light'}&hide_border=true&locale=pt-br&bg_color=ffffff00&text_color=${theme === 'dark' ? 'A9AAAF' : '222'}"/>
         </div>
     `);
 
-    $('.c-github').html('');
-    $('.c-github').append($githubSkills).append($githubGraph);
+  $('.c-github').html('');
+  $('.c-github').append($githubSkills).append($githubGraph);
 };
 
 const createCloudsGroup = () => {
 
-    let $cloud;
+  let $cloud;
 
-    for (let i = 1; i < 5; i++) {
+  for (let i = 1; i < 5; i++) {
 
-        $cloud = $(`<div class="c-clouds-group__item c-clouds-group__item--${i}"></div>`);
+    $cloud = $(`<div class="c-clouds-group__item c-clouds-group__item--${i}"></div>`);
 
-        $cloud.append(`
+    $cloud.append(`
             <svg class="c-clouds-group__item__img" width="128" height="77" viewBox="0 0 128 77" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M103 25C103 25.6733 102.973 26.3403 102.921 27.0001L103 27C116.807 27 128 38.1929 128 52C128 65.8071 116.807 77 103 77C102.327 77 101.66 76.9734 101 76.9212V77H20C8.9543 77 0 68.0457 0 57C0 45.9543 8.9543 37 20 37C22.0981 37 24.1207 37.3231 26.0209 37.9222C26.007 37.6165 26 37.3091 26 37C26 25.9543 34.9543 17 46 17C48.7785 17 51.4246 17.5666 53.8292 18.5905C56.6596 7.88886 66.4085 0 78 0C91.8071 0 103 11.1929 103 25Z" fill="white"/>
             </svg>
         `);
 
-        for (let i = 1; i < 4; i++) {
-            $cloud.append(`
+    for (let i = 1; i < 4; i++) {
+      $cloud.append(`
                 <svg class="c-rain__drop c-rain__drop--${i} width="50" height="75" viewBox="0 0 50 75" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="25" cy="50" r="25" fill="#8FDBF3"/>
                     <path d="M25 0L46.6506 37.5H3.34937L25 0Z" fill="#8FDBF3"/>
                 </svg>
             `);
-        }
-
-        $('.c-clouds-group').append($cloud);
     }
+
+    $('.c-clouds-group').append($cloud);
+  }
 };
 
 /* ========= HANDLES ========= */
 
 const handleHideSidebar = () => {
-    hideSidebar();
+  hideSidebar();
 };
 
 const handleOpenSidebar = () => {
-    openSidebar();
+  openSidebar();
 };
 
 const handleScrollTop = () => {
-    $('.c-app').scrollTop(0);
+  $('.c-app').scrollTop(0);
 }
 
 const handleToggleSwitch = () => {
 
-    const $switch = $('.c-theme');
-    if ($switch.is('.c-theme--active')) $switch.removeClass('c-theme--active');
-    else $switch.addClass('c-theme--active');
+  const $switch = $('.c-theme');
+  if ($switch.is('.c-theme--active')) $switch.removeClass('c-theme--active');
+  else $switch.addClass('c-theme--active');
 
-    switchTheme();
+  switchTheme();
 };
 
 const handleSendEmail = async (e) => {
 
-    e.preventDefault();
+  e.preventDefault();
 
-    const form = e.currentTarget;
-    const $btn = $(form).find('[name="btn_send"]');
+  const form = e.currentTarget;
+  const $btn = $(form).find('[name="btn_send"]');
 
-    try {
+  try {
 
-        $btn.html(`<i class="fa-solid fa-spinner fa-spin-pulse"></i>`);
-        $btn.attr('disabled', 'disabled');
-        $btn.addClass('disabled');
-        $(form).find(':input').attr('disabled', 'disabled');
+    $btn.html(`<i class="fa-solid fa-spinner fa-spin-pulse"></i>`);
+    $btn.attr('disabled', 'disabled');
+    $btn.addClass('disabled');
+    $(form).find(':input').attr('disabled', 'disabled');
 
-        const config = {
-            name: form.name.value,
-            email: form.email.value,
-            subject: form.subject.value,
-            message: form.message.value,
-        };
+    const config = {
+      name: form.name.value,
+      email: form.email.value,
+      subject: form.subject.value,
+      message: form.message.value,
+    };
 
-        await sendEmail(config);
-        toastSuccess('E-mail enviado!');
-    }
-    catch(error) {
+    await sendEmail(config);
+    toastSuccess('E-mail enviado!');
+  }
+  catch (error) {
 
-        console.error(error);
+    console.error(error);
 
-        toastError('Ops! Houve um imprevisto');
-    }
-    finally {
-        $(form).find(':input').attr('disabled', null);
-        $btn.html(`<i class="fa-solid fa-paper-plane"></i>`);
-        $btn.attr('disabled', null);
-        $btn.removeClass('disabled');
-    }
+    toastError('Ops! Houve um imprevisto');
+  }
+  finally {
+    $(form).find(':input').attr('disabled', null);
+    $btn.html(`<i class="fa-solid fa-paper-plane"></i>`);
+    $btn.attr('disabled', null);
+    $btn.removeClass('disabled');
+  }
 };
